@@ -65,7 +65,7 @@ function Customer(){
                 const price = orderPrice * 100;
                 const priceUsd = orderPriceUsd * 100
                 
-                axios.post(`http://murmuring-depths-10666.herokuapp.com/api/orders`, {
+                axios.post(`https://murmuring-depths-10666.herokuapp.com/api/orders`, {
                     ...customer, orderPriceEur: price, orderPriceUsd: priceUsd , cart:cart
                 })
                 .then(res => {

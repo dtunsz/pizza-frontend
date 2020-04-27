@@ -7,7 +7,7 @@ function Confirm(props){
     const orderId = props.match.params.orderId;
 
     useEffect( () => {
-        axios.post(`http://murmuring-depths-10666.herokuapp.com/api/orders/confirm/${orderId}`, {
+        axios.post(`https://murmuring-depths-10666.herokuapp.com/api/orders/confirm/${orderId}`, {
         })
         .then(res => {
             const reply = res.data.message

@@ -14,7 +14,7 @@ function Product(){
     const [products , setProducts] = useState([]);
     const totalItemsInCart = cart.reduce((acc,item) => acc +item.units, 0)
     useEffect( () => {
-        axios.get('http://murmuring-depths-10666.herokuapp.com/api/products')
+        axios.get('https://murmuring-depths-10666.herokuapp.com/api/products')
         .then( res => {
             res = res.data.product;
             setProducts(
