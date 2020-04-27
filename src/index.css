@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* color blue = #039be5 */
+
+.space{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.space-bottom{
+  margin-bottom: 30px;
+}
+.link{
+  padding: 10px 5px;
+  border: 1px #E53935 solid;
+  color: #E53935
+}
+.shift{
+  margin-left: 10px;
+}
+.green-alert{
+  padding: 10px;
+  font-size: 18px;
+  color: red;
+}
+.cart-button{
+  color: #ffffff;
+  background-color: #66bb6a;
+  /* background-color: #f4511e; */
+  padding: 10px 8px;
+}
+.cart-item-button{
+  padding: 5px;
+}
