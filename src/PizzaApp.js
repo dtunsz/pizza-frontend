@@ -10,7 +10,8 @@ import Cart from './components/cart/Cart';
 import Product from './components/product/Product';
 import Customer from './components/customer/Customer';
 import Delivered from './components/order/Delivered';
-import Confirm from './components/order/Confirm';
+import Confirmed from './components/order/Confirmed';
+
 
 function PizzaApp(){
     return(
@@ -26,8 +27,8 @@ function PizzaApp(){
                                 <Route path="/menu" component={Menu} />
                                 <Route path="/product" component={Product} />
                                 <Route path="/cart" component={Cart} />
+                                <Route path="/confirm/:orderId" component={Confirmed} />
                                 <Route path="/customer" component={Customer} />
-                                <Route path="/confirm/:orderId" component={Confirm} />
                                 <Route path="/deliver" component={Delivered} />
                             </Switch>
                             </div>

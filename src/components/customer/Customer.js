@@ -6,7 +6,7 @@ import { CurrencyContext } from '../../contexts/CurrencyContext';
 
 
 
-function Customer(){
+function Customer(props){
 
     const [show] = useContext(CurrencyContext);
 
@@ -47,6 +47,12 @@ function Customer(){
         })
     }
 
+    const push = (orderId) => {
+        setTimeout(() => {
+            props.history.push('/confirm/'+orderId);
+        }, 3000);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -66,13 +72,18 @@ function Customer(){
                 const priceUsd = orderPriceUsd * 100
                 
                 axios.post(`https://murmuring-depths-10666.herokuapp.com/api/orders`, {
+                // axios.post(`http://localhost:8000/api/orders`, {
+
                     ...customer, orderPriceEur: price, orderPriceUsd: priceUsd , cart:cart
                 })
                 .then(res => {
-                    let pass ="Your Order has been Placed please check your email and confirm the Order";
+                    let pass ="Your Order has been Placed confirm your the Order on the next page";
                     setPass(pass);
                     emptyAllState();
                     clearAllFields();
+                    console.log(res.data);
+                    console.log(res.data.order[0].orderId)
+                    push(res.data.order[0].orderId);
                 })
                 .catch( (err) => {
                     let msg = "Unable to place Order, Please Retry";

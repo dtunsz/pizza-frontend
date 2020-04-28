@@ -20,7 +20,9 @@ function Delivered(props){
         e.preventDefault();
         console.log(order)
         console.log(order.order)
+        
         axios.post(`https://murmuring-depths-10666.herokuapp.com/api/orders/deliver/${order.order}`, {
+        // axios.post(`http://localhost:8000/api/orders/deliver/${order.order}`, {
         })
         .then(res => {
             console.log(res);
